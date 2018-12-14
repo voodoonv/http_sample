@@ -24,9 +24,7 @@ object HttpServer extends App {
   implicit val materializer: ActorMaterializer = ActorMaterializer()
 
   var devInfo = scala.collection.mutable.Map[Int, Developer]()
-
-  devInfo += (1 -> Developer("Vasyl", "software developer"))
-
+  
   def route = path("user") {
     pathEndOrSingleSlash {
       get {
